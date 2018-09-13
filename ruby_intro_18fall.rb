@@ -104,5 +104,3 @@ class Book
 
 end
 
-
-puts group_anagrams(['buster','gautam','buster'])

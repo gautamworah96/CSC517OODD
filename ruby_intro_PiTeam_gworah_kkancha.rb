@@ -1,17 +1,17 @@
 # Part 1
 
 def unique_array(a)
-  # ADD YOUR CODE HERE
-  a.uniq
+	# ADD YOUR CODE HERE
+	a.uniq
 end
 
 def two_sum?(a, n)
-  a.each do |i|
-    a.each do |j|
-      return true if i != j && i+j == n
-    end
-  end
-  return false
+	a.each_with_index do |x,i|
+		a.each_with_index do |y,j|
+			return true if i != j && x+y == n
+		end
+	end
+	return false
 end
 
 def group_anagrams(a)
@@ -21,27 +21,26 @@ end
 # Part 2
 
 def palindrome?(s)
-  r = s.reverse
-  return s == r
-
+	r = s.reverse
+	return s == r
 end
 
 def remove_and_append_vowels(s)
-  match = s.scan(/[aeiouAEIOU]/).join
-  s.gsub(/[aeiouAEIOU]/, '') + match
+	match = s.scan(/[aeiouAEIOU]/).join
+	s.gsub(/[aeiouAEIOU]/, '') + match
 end
 
 def highest_frequency_word(s)
-  x = s.downcase.split(/\W+/)
-  h = Hash.new(0)
-  x.each do |i|
-    h[i] = h[i] + 1
-  end
-  max = 0
-  h.each_value { |i|
-    max = i if i > max
-  }
-  return h.key(max)
+	x = s.downcase.split(/\W+/)
+	h = Hash.new(0)
+	x.each do |i|
+		h[i] = h[i] + 1
+	end
+	max = 0
+	h.each_value { |i|
+		max = i if i > max
+	}
+	return h.key(max)
 end
 
 # Part 3
@@ -104,5 +103,4 @@ class Book
 	end
 
 end
-
 
